@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title>Молодежная организация | ХНЭУ</title>
 		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/style.css">
+		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/vendor/owl.carousel.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	</head>
 
@@ -59,6 +60,21 @@
 			</div>
 
 		</div>
+
+		<div class="slider owl-carousel">
+			
+			<div class="slider_item" style="background-image:url(<?php bloginfo('template_url') ?>/img/demo/1.jpg);"></div>
+			<div class="slider_item" style="background-image:url(<?php bloginfo('template_url') ?>/img/demo/2.jpg);"></div>
+			<div class="slider_item" style="background-image:url(<?php bloginfo('template_url') ?>/img/demo/3.jpg);"></div>
+			<div class="slider_item" style="background-image:url(<?php bloginfo('template_url') ?>/img/demo/3.jpg);"></div>
+			<div class="slider_item" style="background-image:url(<?php bloginfo('template_url') ?>/img/demo/3.jpg);"></div>
+			<div class="slider_item" style="background-image:url(<?php bloginfo('template_url') ?>/img/demo/3.jpg);"></div>
+
+		</div>
+
+		<script src="<?php bloginfo('template_url') ?>/js/vendor/jquery.min.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/vendor/owl.carousel.min.js"></script>
+		<script src="<?php bloginfo('template_url') ?>/js/script.js"></script>
 
 	</body>
 
