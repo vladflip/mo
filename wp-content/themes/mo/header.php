@@ -1,14 +1,61 @@
-<div class="header">
-	<div class="header-title">PRIVET</div>
-	<ul class="header-navbar">
-		<a class='header-item' href='/'>HOME</a>
-		<li class="header-item">TEMPLATES
-			<ul class="header-item-drop">
-				<li><a href='./default' class='pages'>DEFAULT PAGE</a></li>
-				<li><a href='./fullwidth' class="pages">FULL-WIDTH PAGE</a></li>
-				<li><a href='./contact' class='pages'>CONTACT PAGE</a></li>
-			</ul>
-		</li>
-		<a class='header-item' href='./contact'>CONTACT</a>
-	</ul>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Молодежная организация | ХНЭУ</title>
+		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/style.css">
+		<?php wp_head(); ?>
+	</head>
+
+	<body>
+		
+		<div class="header">
+			
+			<div class="header_top">
+				
+				<div class="container">
+					
+					<ul class="header_links">
+						<li>
+							<a href="#"><span class="fa fa-facebook"></span></a>
+						</li>
+						<li>
+							<a href="#"><span class="fa fa-vk"></span></a>
+						</li>
+						<li>
+							<a href="#"><span class="fa fa-instagram"></span></a>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="header_logo"></div>
+
+			<div class="header_menu">
+				<div class="container">
+					
+					<ul class="header_menu-item">
+						<li>
+							<a href="#">Главная</a>
+						</li>
+						<li>
+							<a href="#">Новости</a>
+						</li>
+						<li>
+							<a href="#">О нас</a>
+						</li>
+						<li>
+							<a href="#">Мероприятия</a>
+						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+
+		</div>
