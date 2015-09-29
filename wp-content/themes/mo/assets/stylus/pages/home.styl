@@ -1,0 +1,84 @@
+.home
+	
+	&_posts
+		width 680px
+		
+.post
+	
+	margin-top 80px
+	
+	&_thumbnail
+		
+		img
+			max-width 680px
+			
+	&_title
+		color #202020
+		text-align center
+		font-size 2em
+		font-family $bold
+		margin-top 25px	
+		
+	&_date
+		margin 1em 0
+		position relative
+		color black
+		font-family $bold
+		font-size 1em
+		text-align center
+		
+		&--large
+			font-size 1.5em
+			
+		&:after
+			content ''
+			position absolute
+			bottom -1em
+			width 2em
+			height 1px
+			left calc(50% - 1em)
+			background #eee
+	
+	&_excerpt
+		margin 1em auto 2.4em
+		width 88%
+		text-align center
+		font-size 1em
+		line-height 1.6em
+		font-family $regular
+		color #898989
+		
+	&_button
+		position relative
+		
+		&:before,
+		&:after
+			content ''
+			position absolute
+			top 16px
+			height 1px
+			background #eeeeee
+			width 42%
+			display block
+			
+		&:before
+			left 0
+		&:after
+			right 0
+			
+		& a
+			margin 0 auto
+			display block
+			width 55px
+			color $blue
+			font-family $regular
+			font-size 0.9em
+			padding 5px 15px
+			border-radius 20px
+			border 2px solid $blue
+			
+			transition background-color 150ms ease, color 150ms ease
+			
+			&:hover
+				color white
+				background-color $blue

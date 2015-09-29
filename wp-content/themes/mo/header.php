@@ -12,7 +12,7 @@
 		
 		<div class="header">
 			
-			<div class="header_top">
+			<!-- <div class="header_top">
 				
 				<div class="container">
 					
@@ -30,7 +30,7 @@
 
 				</div>
 
-			</div>
+			</div> -->
 
 			<div class="header_logo"></div>
 
