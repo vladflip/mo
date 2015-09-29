@@ -4,18 +4,23 @@ add_theme_support( 'post-thumbnails' );
 
 add_filter('show_admin_bar', '__return_false');
 
-add_action('init', 'addScript');
+add_action('init', 'addScripts');
 
-function addScript(){
+function addScripts(){
 	
 	if( ! is_admin() ){
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js');
 		wp_enqueue_script('jquery');
 	}
+
+	wp_register_script('stickyjs', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', [], '1', true);
+
 	
-	wp_register_script('main-script', get_template_directory_uri() . '/js/script.js', ['jquery'], '1', true);
-	wp_enqueue_script('main-script');
+	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', [
+		'jquery',
+		'stickyjs'
+	], '1', true);
 }
 
 function getThumbSrc($id) {

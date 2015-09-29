@@ -7,6 +7,7 @@
 <div class="home">
 		
 	<div class="container">
+		
 		<div class="home_posts">
 
 			<?php foreach ($posts as $post): ?>
@@ -43,11 +44,8 @@
 		
 		</div>
 		
-		<div class="sidebar">
-			
-			
-		
-		</div>
+		<?php get_sidebar('sidebar'); ?>
+
 	</div>
 
 </div>
