@@ -1,11 +1,11 @@
 <?php
-	$args = [
+	$args = array(
 		'theme_location' => 'header_menu',
 		'container' => false,
 		'menu_id' => '',
 		'menu_class' => 'header_menu-item'
 
-	];
+	);
 ?>
 
 <!DOCTYPE html>

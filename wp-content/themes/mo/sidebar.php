@@ -1,8 +1,8 @@
 <?php
-	$args = [
+	$args = array(
 		'post_type' => 'usefull-links',
 		'numberposts' => 0
-	];
+	);
 
 	$links = get_posts($args);
 
