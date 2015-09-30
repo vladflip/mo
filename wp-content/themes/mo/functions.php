@@ -12,9 +12,8 @@ add_action('init', 'usefull_links');
 add_action('init', 'registerMenu');
 
 function registerMenu() {
-	register_nav_menus(
-		['header_menu' => __('Главное меню')]
-	);
+	$args = ['header_menu' => __('Главное меню')];
+	register_nav_menus($args);
 }
 
 function usefull_links() {
