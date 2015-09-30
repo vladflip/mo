@@ -38,13 +38,13 @@ function addScripts(){
 		wp_enqueue_script('jquery');
 	}
 
-	wp_register_script('stickyjs', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', [], '1', true);
+	wp_register_script('stickyjs', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', array(), '1', true);
 
 	
-	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', [
+	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', array(
 		'jquery',
 		'stickyjs'
-	], '1', true);
+	), '1', true);
 }
 
 function getThumbSrc($id) {
@@ -62,7 +62,7 @@ function getTheDate($id) {
 	$day = $date[0];
 	$month = $date[1];
 
-	$months = [
+	$months = array(
 		'Января',
 		'Февраля',
 		'Марта',
@@ -75,7 +75,7 @@ function getTheDate($id) {
 		'Октября',
 		'Ноября',
 		'Декабря'
-	];
+	);
 
 	$dayFormatted = '<span class="post_date--large">' . $day . '</span>';
 
