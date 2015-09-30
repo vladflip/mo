@@ -6,6 +6,22 @@ add_filter('show_admin_bar', '__return_false');
 
 add_action('init', 'addScripts');
 
+function usefull_links() {
+
+	register_post_type( 'usefull-links',
+        array(
+            'label' => 'Ссылки',
+            'public' => true,
+            'menu_position' => 15,
+            'menu_icon' => 'dashicons-images-alt',
+            'supports' => array( 'title', 'custom-fields', 'thumbnail')
+        )
+    );
+
+}
+
+add_action('init', 'usefull_links');
+
 function addScripts(){
 	
 	if( ! is_admin() ){
