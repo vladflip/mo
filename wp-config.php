@@ -1,4 +1,12 @@
 <?php
+
+require_once 'Dotenv.php';
+require_once 'Validator.php';
+require_once 'Loader.php';
+
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
 /**
  * Основные параметры WordPress.
  *
@@ -16,16 +24,16 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'mo');
+define('DB_NAME', $_ENV['DB_NAME']);
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'root');
+define('DB_USER', $_ENV['DB_USER']);
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 
 /** Имя сервера MySQL */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $_ENV['DB_HOST']);
 
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
@@ -68,7 +76,7 @@ $table_prefix  = 'wp_';
  * Разработчикам плагинов и тем настоятельно рекомендуется использовать WP_DEBUG
  * в своём рабочем окружении.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', $_ENV['APP_DEBUG']);
 
 /* Это всё, дальше не редактируем. Успехов! */
 
