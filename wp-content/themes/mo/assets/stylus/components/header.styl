@@ -37,7 +37,7 @@
 		background-color white
 		height 60px
 		border-top 1px solid #eee
-		border-bottom 1px solid #eee
+		box-shadow inset 0 -1px 0 0 #eee
 
 	&_menu-item
 		margin 0
@@ -49,8 +49,15 @@
 		font-size 1em
 		
 		li
+			transition background-color 250ms ease-in-out
 			a
 				padding 20px
 				display block
 				color #333
+				
+		li:hover
+			background-color lighten($blue, 10)
+			a
+				color white
+		
 				

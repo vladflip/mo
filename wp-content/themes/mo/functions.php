@@ -1,10 +1,19 @@
 <?php
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'menus' );
 
 add_filter('show_admin_bar', '__return_false');
 
 add_action('init', 'addScripts');
+
+add_action('init', 'usefull_links');
+
+add_action('init', 'registerMenu');
+
+function registerMenu() {
+	register_nav_menus(['header_menu' => __('Главное меню')]);
+}
 
 function usefull_links() {
 
@@ -19,8 +28,6 @@ function usefull_links() {
     );
 
 }
-
-add_action('init', 'usefull_links');
 
 function addScripts(){
 	

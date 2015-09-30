@@ -1,3 +1,13 @@
+<?php
+	$args = [
+		'theme_location' => 'header_menu',
+		'container' => false,
+		'menu_id' => '',
+		'menu_class' => 'header_menu-item'
+
+	];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -36,8 +46,10 @@
 
 			<div id="header-menu" class="header_menu">
 				<div class="container">
+
+					<?php wp_nav_menu($args); ?>
 					
-					<ul class="header_menu-item">
+					<!-- <ul class="header_menu-item">
 						<li>
 							<a href="#">Главная</a>
 						</li>
@@ -53,7 +65,7 @@
 						<li>
 							<a href="#">Контакты</a>
 						</li>
-					</ul>
+					</ul> -->
 
 				</div>
 			</div>
