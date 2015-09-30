@@ -12,7 +12,7 @@ add_action('init', 'usefull_links');
 add_action('init', 'registerMenu');
 
 function registerMenu() {
-	$args = ['header_menu' => __('Главное меню')];
+	$args = array('header_menu' => __('Главное меню'));
 	register_nav_menus($args);
 }
 
