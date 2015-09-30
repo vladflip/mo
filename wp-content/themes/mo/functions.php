@@ -12,7 +12,9 @@ add_action('init', 'usefull_links');
 add_action('init', 'registerMenu');
 
 function registerMenu() {
-	register_nav_menus(['header_menu' => __('Главное меню')]);
+	register_nav_menus(
+		['header_menu' => __('Главное меню')]
+	);
 }
 
 function usefull_links() {
