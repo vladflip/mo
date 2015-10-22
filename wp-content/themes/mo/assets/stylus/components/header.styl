@@ -29,8 +29,14 @@
 		
 	&_logo
 		margin 20px 0
-		background url(../img/logo.png) no-repeat center
 		height 250px
+		overflow hidden
+		&-item
+			height 250px
+			width 100%
+			position fixed	
+			z-index -1
+			background url(../img/logo.png) no-repeat center
 		
 	&_menu
 		z-index 10
