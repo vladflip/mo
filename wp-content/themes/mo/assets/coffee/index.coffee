@@ -1,3 +1,5 @@
+window.$ = jQuery
+
 header = $ '#header-menu'
 
 header.sticky
