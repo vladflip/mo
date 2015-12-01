@@ -11,6 +11,13 @@ add_action('init', 'usefull_links');
 
 add_action('init', 'registerMenu');
 
+function change_submenu_class($menu) {  
+	$menu = preg_replace('/ class="sub-menu"/','/ class="menu_sub" /',$menu);  
+	return $menu;  
+}
+
+add_filter('wp_nav_menu','change_submenu_class');  
+
 function registerMenu() {
 	$args = array('header_menu' => __('Главное меню'));
 	register_nav_menus($args);
@@ -19,14 +26,14 @@ function registerMenu() {
 function usefull_links() {
 
 	register_post_type( 'usefull-links',
-        array(
-            'label' => 'Ссылки',
-            'public' => true,
-            'menu_position' => 15,
-            'menu_icon' => 'dashicons-images-alt',
-            'supports' => array( 'title', 'custom-fields', 'thumbnail')
-        )
-    );
+		array(
+			'label' => 'Ссылки',
+			'public' => true,
+			'menu_position' => 15,
+			'menu_icon' => 'dashicons-images-alt',
+			'supports' => array( 'title', 'custom-fields', 'thumbnail')
+		)
+	);
 
 }
 

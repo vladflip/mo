@@ -3,7 +3,7 @@
 		'theme_location' => 'header_menu',
 		'container' => false,
 		'menu_id' => '',
-		'menu_class' => 'header_menu-item'
+		'menu_class' => 'menu_list'
 
 	);
 ?>
@@ -46,7 +46,7 @@
 				<div id="header-logo" class="header_logo-item"></div>
 			</div>
 
-			<div id="header-menu" class="header_menu">
+			<div id="menu" class="menu">
 				<div class="container">
 
 					<?php wp_nav_menu($args); ?>
