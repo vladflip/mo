@@ -16,6 +16,7 @@
 		<title>Молодежная организация | ХНЭУ</title>
 		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/style.css">
 		<?php wp_head(); ?>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
