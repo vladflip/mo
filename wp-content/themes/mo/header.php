@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/style.css">
 		<?php wp_head(); ?>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
 
 	<body>
@@ -29,10 +30,10 @@
 					
 					<ul class="header_links">
 						<li>
-							<a href="#"><span class="fa fa-facebook"></span></a>
+							<a href="#"><span class="fa fa-vk"></span></a>
 						</li>
 						<li>
-							<a href="#"><span class="fa fa-vk"></span></a>
+							<a href="#"><span class="fa fa-facebook"></span></a>
 						</li>
 						<li>
 							<a href="#"><span class="fa fa-instagram"></span></a>
