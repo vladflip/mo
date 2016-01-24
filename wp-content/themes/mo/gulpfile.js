@@ -44,7 +44,7 @@ gulp.task('stylus', function(){
 				.on('error', showError)
 				.pipe(notify('Compiled : Stylus'))
 				.pipe(prefix({browsers: ['last 2 versions']}))
-				.pipe(minify())
+				// .pipe(minify())
 				.pipe(rename('style.css'))
 				.pipe(gulp.dest('css'));
 });
