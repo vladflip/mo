@@ -10,8 +10,7 @@
 	<div class="container">
 		
 		<div class="page_content">
-			<?php var_dump($post->post_content); ?>
-			<?php echo $post->post_content; ?>
+			<?php echo nl2br($post->post_content); ?>
 		</div>
 
 		<?php get_sidebar('sidebar'); ?>
