@@ -35,7 +35,7 @@
 			background url(../img/logo.png) no-repeat center
 		
 .menu
-	z-index 10
+	z-index 20
 	background-color white
 	height 60px
 	border-top 1px solid #eee
@@ -70,12 +70,11 @@
 				
 	&_list li:hover &_sub
 		opacity 1
-		z-index 10
 		transform translateY(0px)
 		visibility visible
-		background-color #333
 		
 	&_sub
+		z-index 2
 		position absolute
 		color white
 		flex-direction column
@@ -84,9 +83,8 @@
 		opacity 0
 		transform translateY(-10px)
 		visibility hidden
-		transition transform 250ms, opacity 200ms, visibility 200ms, background-color 200ms
-		background-color transparent
-		z-index -10
+		transition transform 250ms, opacity 200ms, visibility 200ms
+		background-color #333
 		
 		li
 			transition background-color 200ms ease-in-out
