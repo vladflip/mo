@@ -39,7 +39,7 @@ function usefull_links() {
 
 function addScripts(){
 
-	wp_register_script('stickyjs', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', array('jquery'), '1', true);
+	wp_enqueue_script('stickyjs', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', array('jquery'), '1', true);
 
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', array(
 		'jquery',
