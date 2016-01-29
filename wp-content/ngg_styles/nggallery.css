@@ -6,3 +6,45 @@ Version: 2.12
 
 This stylesheet is provided to allow users the ability of overriding the default styles for all display types
 */
+
+.ngg-galleryoverview{
+	display: -webkit-box !important; 
+	display: -ms-flexbox !important; 
+	display: -webkit-flex !important;
+	display: flex !important;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+}
+
+.ngg-gallery-thumbnail-box{
+	float:none;
+	width:340px;
+	height:250px;
+	margin-right:0;
+	margin-bottom:20px;
+	display:flex;
+	justify-content:center;
+	-webkit-justify-content:center;
+	align-items:center;
+	-webkite-align-items:center;
+}
+
+.ngg-gallery-thumbnail{
+	float:none;
+}
+/*
+.ngg-gallery-thumbnail a{
+	display:inline-block;
+}*/
+
+.ngg-gallery-thumbnail img{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+.ngg-clear{
+	display:none;
+}
