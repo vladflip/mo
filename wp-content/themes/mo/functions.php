@@ -28,7 +28,7 @@ function register_custom_posts() {
 		)
 	);
 
-	register_post_type( 'social-icons',
+	register_post_type( 'social-links',
 		array(
 			'label' => 'Social',
 			'public' => true,
