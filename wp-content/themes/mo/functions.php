@@ -9,20 +9,14 @@ add_filter('wp_nav_menu','change_submenu_class');
 add_filter('show_admin_bar', '__return_false');
 
 add_action('init', 'include_scripts_and_styles');
-add_action('init', 'usefull_links');
+add_action('init', 'register_custom_posts');
 add_action('init', 'registerMenu');
 
-function change_submenu_class($menu) {  
-	$menu = preg_replace('/ class="sub-menu"/','/ class="menu_sub" /',$menu);  
-	return $menu;  
-} 
+// ---------------------------------------------
+// CREATE CUSTOM POSTS
+// ---------------------------------------------
 
-function registerMenu() {
-	$args = array('header_menu' => __('Главное меню'));
-	register_nav_menus($args);
-}
-
-function usefull_links() {
+function register_custom_posts() {
 
 	register_post_type( 'usefull-links',
 		array(
@@ -34,6 +28,30 @@ function usefull_links() {
 		)
 	);
 
+	register_post_type( 'social-icons',
+		array(
+			'label' => 'Social',
+			'public' => true,
+			'menu_position' => 16,
+			'menu_icon' => 'dashicons-networking',
+			'supports' => array( 'title', 'custom-fields')
+		)
+	);
+
+}
+
+// ---------------------------------------------
+// CREATE CUSTOM POSTS
+// ---------------------------------------------
+
+function change_submenu_class($menu) {  
+	$menu = preg_replace('/ class="sub-menu"/','/ class="menu_sub" /',$menu);  
+	return $menu;  
+} 
+
+function registerMenu() {
+	$args = array('header_menu' => __('Главное меню'));
+	register_nav_menus($args);
 }
 
 function include_scripts_and_styles(){
