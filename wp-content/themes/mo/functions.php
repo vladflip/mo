@@ -1,24 +1,21 @@
 <?php
 
+define('THEME_URI', get_template_directory_uri());
+
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 
-define('THEME_URI', get_template_directory_uri());
-
+add_filter('wp_nav_menu','change_submenu_class'); 
 add_filter('show_admin_bar', '__return_false');
 
-add_action('init', 'addScripts');
-
+add_action('init', 'include_scripts_and_styles');
 add_action('init', 'usefull_links');
-
 add_action('init', 'registerMenu');
 
 function change_submenu_class($menu) {  
 	$menu = preg_replace('/ class="sub-menu"/','/ class="menu_sub" /',$menu);  
 	return $menu;  
-}
-
-add_filter('wp_nav_menu','change_submenu_class');  
+} 
 
 function registerMenu() {
 	$args = array('header_menu' => __('Главное меню'));
@@ -39,14 +36,19 @@ function usefull_links() {
 
 }
 
-function addScripts(){
+function include_scripts_and_styles(){
 
-	wp_enqueue_script('stickyjs', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', array('jquery'), '1', true);
+	wp_enqueue_script('stickyjs', THEME_URI . '/js/vendor/jquery.sticky.js',
+	array('jquery'), '1', true);
 
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', array(
 		'jquery',
 		'stickyjs'
 	), '1', true);
+
+	wp_register_style('main-style', 
+		THEME_URI.'/css/style.css' );
+
 }
 
 function getThumbSrc($id) {

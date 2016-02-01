@@ -15,7 +15,7 @@
 		<meta charset="UTF-8">
 		<title>Молодежная организация | ХНЭУ</title>
 		<link rel="shortcut icon" href="<?=THEME_URI?>/img/favicon.png" type="image/x-icon">
-		<link rel="stylesheet" href="<?=THEME_URI?>/css/style.css">
+		<?php wp_enqueue_style('main-style'); ?>
 		<?php wp_head(); ?>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
