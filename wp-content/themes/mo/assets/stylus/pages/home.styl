@@ -7,6 +7,24 @@
 	.container
 		display flex
 		justify-content space-between
+	
+	&_more-posts
+		margin auto
+		text-align center
+		a
+			margin 60px auto 0
+			display inline-block
+			font-size 1.3em
+			border 2px solid $green
+			color $green
+			padding 10px 15px
+			cursor pointer
+			border-radius 20px
+			transition color 250ms ease-in-out, background-color 250ms ease-in-out
+			
+			&:hover
+				color white
+				background-color $green
 		
 .post
 	

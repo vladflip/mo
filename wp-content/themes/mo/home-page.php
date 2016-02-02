@@ -1,7 +1,9 @@
 <?php
-	$posts = get_posts();
+	$args = [
+		'posts_per_page' => 6
+	];
 
-	// var_dump($posts);
+	$posts = get_posts($args);
 ?>
 
 <div class="home">
@@ -41,6 +43,10 @@
 				</div>
 
 			<?php endforeach; ?>
+
+			<div class="home_more-posts">
+				<a href="">Остальные новости</a>
+			</div>
 		
 		</div>
 		
