@@ -45,7 +45,7 @@
 			<?php endforeach; ?>
 
 			<div class="home_more-posts">
-				<a href="">Остальные новости</a>
+				<a href="<?=site_url();?>/news">Остальные новости</a>
 			</div>
 		
 		</div>
