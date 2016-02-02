@@ -11,13 +11,6 @@
 
 	$socials = get_posts($args);
 
-	function check_link($id){
-		$link = get_post_custom($id);
-
-		if( ! array_key_exists('link', $link))
-			return '#';
-	}
-
 ?>
 
 <div class="sidebar">

@@ -44,6 +44,13 @@ function register_custom_posts() {
 // CREATE CUSTOM POSTS
 // ---------------------------------------------
 
+function check_link($id){
+	$link = get_post_custom($id);
+
+	if( ! array_key_exists('link', $link))
+		return '#';
+}
+
 function change_submenu_class($menu) {  
 	$menu = preg_replace('/ class="sub-menu"/','/ class="menu_sub" /',$menu);  
 	return $menu;  

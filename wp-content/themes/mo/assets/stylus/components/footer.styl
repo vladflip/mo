@@ -1,11 +1,58 @@
 .footer
-	height 350px
 	background-color $black
-	display flex
-	align-items center
-	justify-content center
+	color white
+	
+	&_top, &_bottom
+		display flex
+		justify-content space-between
+		align-items center
 	
 	&_logo
 		background url(../img/mowhite.png) center no-repeat
-		height 250px
-		width 553px
+		background-size contain
+		height 200px
+		width 400px
+		
+	&_top
+		padding 60px 0
+		
+		div
+			width 480px
+		
+	&_bottom
+		height 70px
+		padding 0 10px
+		border-top 1px solid #222
+		
+	&_title
+		margin 0 0 10px 0
+		text-align center
+		
+	&_instagram
+		width 224px
+		height 260px
+	
+	&_insta-list
+		margin 0 auto
+		padding 0
+		list-style none
+		width 220px
+		height 220px
+		
+		li
+			margin 5px
+			float left
+			background-color white
+			border-radius 10px
+			width 100px
+			height 100px
+			cursor pointer
+		
+	&_copyrights
+		font-size .9em
+		
+	&_socials
+		font-size 1.7em
+		
+		a
+			padding 5px
