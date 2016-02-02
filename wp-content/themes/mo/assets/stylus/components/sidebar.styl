@@ -6,14 +6,24 @@
 	border-left 1px solid #eee
 	
 	&_socials
-		margin 10px 0
+		margin 0 0 10px 0
 		text-align center
 		font-size 2em
-		color $green
+		color $blue
+		position relative
 		
 		a
 			margin-left 5px
 			padding 5px
+			
+		&:after
+			content ''
+			position absolute
+			bottom 0
+			height 1px
+			width 100%
+			background #eeeeee
+			display block
 	
 	&_header
 		margin 0
