@@ -1,14 +1,12 @@
 <?php
 	$args = array(
-		'post_type' => 'usefull-links',
-		'numberposts' => 0
+		'post_type' => 'usefull-links'
 	);
 
 	$links = get_posts($args);
 
 	$args = array(
-		'post_type' => 'social-links',
-		'numberposts' => 0
+		'post_type' => 'social-links'
 	);
 
 	$socials = get_posts($args);
