@@ -44,9 +44,13 @@
 
 			<?php endforeach; ?>
 
-			<div class="home_more-posts">
-				<a href="<?=site_url();?>/news">Остальные новости</a>
-			</div>
+			<?php if(is_page('news')) : ?>
+				
+			<?php else: ?>
+				<div class="home_more-posts">
+					<a href="<?=site_url();?>/news">Остальные новости</a>
+				</div>
+			<?php endif; ?>
 		
 		</div>
 		
