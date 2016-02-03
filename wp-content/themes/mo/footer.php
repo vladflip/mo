@@ -6,7 +6,8 @@
 	$socials = get_posts($args);
 
 	$args = array(
-		'post_type' => 'insta-links'
+		'post_type' => 'insta-links',
+		'posts_per_page' => 4
 	);
 
 	$instas = get_posts($args);
