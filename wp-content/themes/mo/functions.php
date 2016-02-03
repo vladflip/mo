@@ -38,6 +38,16 @@ function register_custom_posts() {
 		)
 	);
 
+	register_post_type( 'insta-links',
+		array(
+			'label' => 'Instagram',
+			'public' => true,
+			'menu_position' => 17,
+			'menu_icon' => 'dashicons-format-image',
+			'supports' => array( 'title', 'custom-fields', 'thumbnail')
+		)
+	);
+
 }
 
 // ---------------------------------------------
@@ -49,6 +59,8 @@ function check_link($id){
 
 	if( ! array_key_exists('link', $link))
 		return '#';
+	
+	return $link['link'][0];
 }
 
 function change_submenu_class($menu) {  

@@ -4,6 +4,14 @@
 	);
 
 	$socials = get_posts($args);
+
+	$args = array(
+		'post_type' => 'insta-links'
+	);
+
+	$instas = get_posts($args);
+
+	// var_dump($instas);
 ?>	
 		<div class="footer">
 			<div class="container">
@@ -12,26 +20,15 @@
 					<div class="footer_instagram">
 						<h3 class="footer_title">Instagram</h3>
 						<ul class="footer_insta-list">
-							<li>
-								<a href="">
-									<img src="" alt="">
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="" alt="">
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="" alt="">
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<img src="" alt="">
-								</a>
-							</li>
+							<?php 
+								foreach($instas as $insta):
+								$link = check_link($insta->ID);
+								$src = wp_get_attachment_url(get_post_thumbnail_id($insta->ID));
+							?>
+								<li style="background-image:url(<?=$src?>)">
+									<a href="<?=$link?>" target="_blank"></a>
+								</li>
+							<?php endforeach; ?>
 						</ul>
 					</div>
 				</div>
