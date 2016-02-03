@@ -59,7 +59,7 @@ function check_link($id){
 
 	if( ! array_key_exists('link', $link))
 		return '#';
-	
+
 	return $link['link'][0];
 }
 
@@ -76,7 +76,10 @@ function registerMenu() {
 function include_scripts_and_styles(){
 
 	wp_enqueue_script('stickyjs', THEME_URI . '/js/vendor/jquery.sticky.js',
-	array('jquery'), '1', true);
+		array('jquery'), '1', true);
+
+	wp_enqueue_script('smoothscroll', THEME_URI . '/js/vendor/smoothscroll.min.js',
+		array('jquery'), '1', true);
 
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/script.js', array(
 		'jquery',
