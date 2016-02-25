@@ -6,7 +6,6 @@
 			
 	&_top
 		background-color $blacker
-		height 60px
 		z-index 20
 		
 		.container
@@ -75,25 +74,29 @@
 				
 	&_list li:hover &_sub
 		opacity 1
-		transform translateY(0px)
 		visibility visible
 		
 	&_sub
 		z-index 2
 		position absolute
-		color white
+		color $mainfont
+		background-color white
 		flex-direction column
 		font-size .9em
 		width 300px
 		opacity 0
-		transform translateY(-10px)
 		visibility hidden
-		transition transform 250ms, opacity 200ms, visibility 200ms
-		background-color #333
+		transition opacity 250ms, visibility 200ms
+		box-shadow 0 1px 10px rgba(0,0,0,0.15)
 		
 		li
-			transition background-color 200ms ease-in-out
+			transition all 200ms ease-in-out
 			text-transform none
+			
+			a	
+				font-weight 300
+				font-size .95em
+				padding 15px
 			
 			&.current-menu-item
 				color white
@@ -101,3 +104,4 @@
 			
 			&:hover
 				background-color $green !important
+				color white

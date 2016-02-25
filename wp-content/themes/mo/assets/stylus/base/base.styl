@@ -2,6 +2,8 @@ $green = #36b44a
 $blue = #374fa2
 $black = #151515
 $black2 = #1d1e18
+
+$mainfont = #2f2f2f
 $blacker = lighten(desaturate(mix($blue, black, 30%), 80%), 5%)
 
 body
@@ -9,7 +11,7 @@ body
 	padding 0
 	background-color desaturate(lighten(mix($blue, grey), 90%), 50%)
 	// #262626
-	color #2f2f2f
+	color $mainfont
 	font-family 'Roboto Slab', serif
 
 .container
