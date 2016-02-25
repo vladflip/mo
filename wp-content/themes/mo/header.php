@@ -25,16 +25,27 @@
 		
 		<div class="header">
 
-			<div class="header_logo">
-				<div id="header-logo" class="header_logo-item"></div>
+			<div id="header" class="header_top">
+				<div class="container">
+					<div class="menu">
+						<?php wp_nav_menu($args); ?>
+					</div>
+					<ul class="header_socials">
+						<li>
+							<a href="#"><span class="fa fa-facebook"></span></a>
+						</li>
+						<li>
+							<a href="#"><span class="fa fa-vk"></span></a>
+						</li>
+						<li>
+							<a href="#"><span class="fa fa-instagram"></span></a>
+						</li>
+					</ul>
+				</div>
 			</div>
 
-			<div id="menu" class="menu">
-				<div class="container">
-
-					<?php wp_nav_menu($args); ?>
-
-				</div>
+			<div class="header_logo">
+				<div id="header-logo" class="header_logo-item"></div>
 			</div>
 
 		</div>

@@ -4,17 +4,32 @@
 
 .header
 			
-	&_links
+	&_top
+		background-color $blacker
+		height 60px
+		z-index 20
+		
+		.container
+			display flex
+			justify-content space-between
+
+	&_socials
 		margin 0
 		padding 0
 		list-style none
 		display flex
+		align-items center
 		
 		a
-			padding 0 10px
-			color $blue
+			padding 5px 10px
+			color white
 			display block
-			font-size 1.2em
+			font-size 1.3em
+			
+			transition all 250ms ease-in-out
+			
+			&:hover
+				color lighten($blue, 15%)
 		
 	&_logo
 		padding 20px 0
@@ -26,11 +41,7 @@
 			background-size contain
 		
 .menu
-	z-index 20
-	background-color white
-	height 60px
-	border-top 1px solid #eee
-	border-bottom 1px solid #eee
+	color white
 	
 	&_list, &_sub
 		list-style none
@@ -46,11 +57,14 @@
 
 	&_list
 		justify-content center
-		font-weight 400
 		
 		&>li
 			position relative
 			transition color 250ms ease-in-out
+			text-transform uppercase
+			
+			a
+				font-weight 700
 				
 			&:hover
 				color darken($green, 10%)
@@ -79,6 +93,7 @@
 		
 		li
 			transition background-color 200ms ease-in-out
+			text-transform none
 			
 			&.current-menu-item
 				color white

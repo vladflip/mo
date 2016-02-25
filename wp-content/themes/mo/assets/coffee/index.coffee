@@ -1,6 +1,5 @@
 window.$ = jQuery
 
-header = $ '#menu'
+header = $ '#header'
 
-header.sticky
-	topSpacing: -1
+header.sticky()
