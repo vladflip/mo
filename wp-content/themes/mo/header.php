@@ -25,6 +25,7 @@
 		<?php wp_head(); ?>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 	</head>
 
 	<body>
