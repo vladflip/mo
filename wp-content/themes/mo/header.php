@@ -6,6 +6,12 @@
 		'menu_class' => 'menu_list'
 
 	);
+
+	$socargs = array(
+		'post_type' => 'social-links'
+	);
+
+	$socials = get_posts($socargs);
 ?>
 
 <!DOCTYPE html>
@@ -26,19 +32,26 @@
 		<div id="header" class="header">
 
 			<div class="container">
+			
 				<div class="menu">
 					<?php wp_nav_menu($args); ?>
 				</div>
+
 				<ul class="header_socials">
-					<li>
-						<a href="#"><span class="fa fa-facebook"></span></a>
-					</li>
-					<li>
-						<a href="#"><span class="fa fa-vk"></span></a>
-					</li>
-					<li>
-						<a href="#"><span class="fa fa-instagram"></span></a>
-					</li>
+
+					<?php 
+						foreach($socials as $social): 
+						$link = check_link($social->ID)
+					?>
+
+						<li>
+							<a href="<?=$link?>">
+								<span class="fa fa-<?=$social->post_title?>"></span>
+							</a>
+						</li>
+
+					<?php endforeach; ?>
+
 				</ul>
 			</div>
 

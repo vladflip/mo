@@ -5,12 +5,6 @@
 
 	$links = get_posts($args);
 
-	$args = array(
-		'post_type' => 'social-links'
-	);
-
-	$socials = get_posts($args);
-
 ?>
 
 <div class="sidebar">
@@ -20,19 +14,6 @@
 		<h3 class="sidebar_header">Полезные ссылки</h3>
 
 		<div class="sidebar_content">
-
-			<div class="sidebar_socials">
-				<?php 
-					foreach($socials as $social): 
-					$link = check_link($social->ID)
-				?>
-
-					<a href="<?=$link?>">
-						<span class="fa fa-<?=$social->post_title?>"></span>
-					</a>
-
-				<?php endforeach; ?>
-			</div>
 			
 			<?php foreach($links as $link): ?>
 
