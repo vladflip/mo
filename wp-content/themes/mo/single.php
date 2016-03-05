@@ -3,10 +3,11 @@
 <div class="page">
 	<div class="container">
 		
-		<div class="page_content">
+		<div class="post">
 			<?php 
 				the_post();
 				the_content();
+				get_template_part('inc/post_footer');
 			?> 
 		</div>
 
