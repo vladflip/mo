@@ -5,6 +5,7 @@ $black2 = #1d1e18
 
 $mainfont = #2f2f2f
 $blacker = lighten(desaturate(mix($blue, black, 30%), 80%), 5%)
+$background = desaturate(lighten(mix($blue, grey), 90%), 60%)
 
 $material
 	background-color white
@@ -14,7 +15,7 @@ $material
 body
 	margin 0
 	padding 0
-	background-color desaturate(lighten(mix($blue, grey), 90%), 60%)
+	background-color $background
 	// #262626
 	color $mainfont
 	font-family 'Roboto Slab', serif

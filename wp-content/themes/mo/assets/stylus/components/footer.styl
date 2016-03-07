@@ -1,28 +1,30 @@
 .footer
-	background-color $blacker
-	color white
+	// border-top 10px solid $blacker
 	
 	&_top, &_bottom
-		display flex
-		justify-content space-between
-		align-items center
+		.container
+			display flex
+			justify-content space-between
+			align-items center
+			height 100%
 	
 	&_logo
-		background url(../img/mowhite.png) center no-repeat
+		background url(../img/logo.png) center no-repeat
 		background-size contain
-		height 160px
-		width 400px
+		height 300px
 		
 	&_top
 		padding 30px 0
+		background-color darken($background, 10%)
 		
-		div
+		.container div
 			width 480px
 		
 	&_bottom
 		height 60px
 		padding 0 10px
-		border-top 1px solid #9ca3a9
+		background-color $blacker
+		color white
 		
 	&_title
 		margin 0 0 10px 0
