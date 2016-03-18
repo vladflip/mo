@@ -58,6 +58,7 @@
 
 		</div>
 
-		<div class="logo">
-			<div class="logo_icon"></div>
+		<div class="title">
+			<div class="title_big">Молодежная Организация</div>
+			<div class="title_small">ХНЭУ имени С. Кузнеца</div>
 		</div>
