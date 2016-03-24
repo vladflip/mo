@@ -1,8 +1,13 @@
 .slider
 	cursor grab
 	
-	&_item		
+	&_item
 		width 100%
+		background-position top center
+		background-size cover
+		background-repeat no-repeat
+
+		// fix blink owl-carousel
 		-webkit-backface-visibility: hidden;
 		-webkit-transform: translateZ(0) scale(1.0, 1.0);
 		img

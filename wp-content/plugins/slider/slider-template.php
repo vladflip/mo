@@ -14,8 +14,7 @@
 
 		<?php $src = wp_get_attachment_url( get_post_thumbnail_id($image->ID) );  ?>
 
-		<div class="slider_item">
-			<img src="<?=$src?>" alt="">
+		<div class="slider_item" style="background-image:url(<?=$src?>)">
 		</div>
 
 	<?php endforeach; ?>

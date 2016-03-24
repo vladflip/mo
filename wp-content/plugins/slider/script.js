@@ -1,4 +1,6 @@
-$('.owl-carousel').owlCarousel({
+var slider = $('.owl-carousel');
+
+slider.owlCarousel({
 	autoplay:true,
 	autoplayTimeout:3000,
 	autoplayHoverPause:true,
@@ -17,3 +19,17 @@ $('.owl-carousel').owlCarousel({
 		}
 	}
 });
+
+var items = slider.find('.slider_item');
+
+changeHeight();
+
+window.onresize = changeHeight;
+
+function changeHeight(){
+	$(items).each(function(i, item){
+		var width = $(item).width();
+		var height = width / 1.5;
+		$(item).height(height);
+	});	
+}
