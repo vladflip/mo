@@ -188,13 +188,22 @@ class C_Lightbox_Library_Manager
             $lightbox = $this->get($lightbox);
         }
         if (!wp_script_is('ngg_lightbox_context')) {
-            wp_enqueue_script('ngg_lightbox_context', $router->get_static_url('photocrati-lightbox#lightbox_context.js'), array('ngg_common', 'photocrati_ajax'), NULL, TRUE);
+            wp_enqueue_script('ngg_lightbox_context', $router->get_static_url('photocrati-lightbox#lightbox_context.js'), array('ngg_common', 'photocrati_ajax'), NGG_SCRIPT_VERSION, TRUE);
         }
         // Make the path to the static resources available for libraries
         // Shutter-Reloaded in particular depends on this
         $this->_add_script_data('ngg_common', 'nextgen_lightbox_settings', array('static_path' => $router->get_static_url('', 'photocrati-lightbox'), 'context' => $thumbEffectContext), TRUE, TRUE);
         // Enqueue lightbox resources, only if we have a configured lightbox
         if ($lightbox) {
+            // Add lightbox script data
+            if (isset($lightbox->values)) {
+                foreach ($lightbox->values as $name => $value) {
+                    if (empty($value)) {
+                        continue;
+                    }
+                    $this->_add_script_data('ngg_lightbox_context', $name, $value, TRUE);
+                }
+            }
             // Enqueue stylesheets
             for ($i = 0; $i < count($lightbox->styles); $i++) {
                 $src = $lightbox->styles[$i];
@@ -202,7 +211,7 @@ class C_Lightbox_Library_Manager
                     wp_enqueue_style(@array_pop(explode('wordpress#', $src)));
                 } else {
                     if (!empty($src)) {
-                        wp_enqueue_style($lightbox->name . "-{$i}", $this->_handle_url($src));
+                        wp_enqueue_style($lightbox->name . "-{$i}", $this->_handle_url($src), FALSE, NGG_SCRIPT_VERSION);
                     }
                 }
             }
@@ -215,15 +224,7 @@ class C_Lightbox_Library_Manager
                     wp_enqueue_script($handle);
                 } else {
                     if (!empty($src)) {
-                        wp_enqueue_script($handle, $this->_handle_url($src), array('ngg_lightbox_context'), NULL, TRUE);
-                    }
-                }
-                if ($i == 0 and isset($lightbox->values)) {
-                    foreach ($lightbox->values as $name => $value) {
-                        if (empty($value)) {
-                            continue;
-                        }
-                        $this->_add_script_data($handle, $name, $value, FALSE);
+                        wp_enqueue_script($handle, $this->_handle_url($src), array('ngg_lightbox_context'), NGG_SCRIPT_VERSION, TRUE);
                     }
                 }
             }

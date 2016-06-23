@@ -23,9 +23,9 @@ class M_Gallery_Display extends C_Base_Module
 			'Gallery Display',
 			'Provides the ability to display gallery of images',
 			'0.13',
-			'http://www.photocrati.com',
+			'https://www.imagely.com',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_Display_Type_Installer');
@@ -176,16 +176,21 @@ class M_Gallery_Display extends C_Base_Module
     }
 
     /**
-     * Deletes any displayed galleries that are no longer associated with
-     * a post/page
+     * Deletes any displayed galleries that are no longer associated with a post/page
+     *
      * @global array $displayed_galleries_to_cleanup
      * @param int $post_id
      */
     function cleanup_displayed_galleries($post_id)
     {
+	    if (!apply_filters('ngg_cleanup_displayed_galleries', true, $post_id))
+		    return;
+
         global $displayed_galleries_to_cleanup;
         $mapper = C_Displayed_Gallery_Mapper::get_instance();
-        foreach ($displayed_galleries_to_cleanup as $id) $mapper->destroy($id);
+        foreach ($displayed_galleries_to_cleanup as $id) {
+	        $mapper->destroy($id);
+        }
     }
 
     /**
@@ -226,10 +231,15 @@ class M_Gallery_Display extends C_Base_Module
         if (!wp_style_is('fontawesome', 'registered'))
         {
             if (strpos(strtolower($_SERVER['SERVER_SOFTWARE']), 'microsoft-iis') !== FALSE) {
-                wp_register_style('fontawesome', site_url('/?ngg_serve_fontawesome_css=1'));
+                wp_register_style('fontawesome', site_url('/?ngg_serve_fontawesome_css=1'), FALSE, NGG_SCRIPT_VERSION);
             } else {
                 $router = C_Router::get_instance();
-                wp_register_style('fontawesome', $router->get_static_url('photocrati-nextgen_gallery_display#fontawesome/font-awesome.css'));
+                wp_register_style(
+	                'fontawesome',
+	                $router->get_static_url('photocrati-nextgen_gallery_display#fontawesome/font-awesome.css'),
+	                FALSE,
+	                NGG_SCRIPT_VERSION
+                );
             }
         }
 
@@ -364,22 +374,38 @@ class M_Gallery_Display extends C_Base_Module
         wp_register_script(
             'nextgen_gallery_display_settings',
             $router->get_static_url('photocrati-nextgen_gallery_display#nextgen_gallery_display_settings.js'),
-            array('jquery-ui-accordion', 'jquery-ui-tooltip')
+            array('jquery-ui-accordion', 'jquery-ui-tooltip'),
+	        NGG_SCRIPT_VERSION
         );
 
         wp_register_style(
             'nextgen_gallery_display_settings',
-            $router->get_static_url('photocrati-nextgen_gallery_display#nextgen_gallery_display_settings.css')
+            $router->get_static_url('photocrati-nextgen_gallery_display#nextgen_gallery_display_settings.css'),
+	        FALSE,
+	        NGG_SCRIPT_VERSION
         );
 
         if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
         {
             wp_register_style(
                 'nextgen_gallery_related_images',
-                $router->get_static_url('photocrati-nextgen_gallery_display#nextgen_gallery_related_images.css')
+                $router->get_static_url('photocrati-nextgen_gallery_display#nextgen_gallery_related_images.css'),
+	            FALSE,
+	            NGG_SCRIPT_VERSION
             );
-            wp_register_script('ngg_common', $router->get_static_url('photocrati-nextgen_gallery_display#common.js'), array('jquery', 'photocrati_ajax'), NGG_PLUGIN_VERSION, TRUE);
-            wp_register_style('ngg_trigger_buttons', $router->get_static_url('photocrati-nextgen_gallery_display#trigger_buttons.css'));
+            wp_register_script(
+	            'ngg_common',
+	            $router->get_static_url('photocrati-nextgen_gallery_display#common.js'),
+	            array('jquery', 'photocrati_ajax'),
+	            NGG_SCRIPT_VERSION,
+	            TRUE
+            );
+            wp_register_style(
+	            'ngg_trigger_buttons',
+	            $router->get_static_url('photocrati-nextgen_gallery_display#trigger_buttons.css'),
+	            FALSE,
+	            NGG_SCRIPT_VERSION
+            );
         }
     }
 

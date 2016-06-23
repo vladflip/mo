@@ -1,4 +1,7 @@
 syntax: glob
 
-package.*
 \.idea
+node_packages
+node_modules
+build
+.DS_Store

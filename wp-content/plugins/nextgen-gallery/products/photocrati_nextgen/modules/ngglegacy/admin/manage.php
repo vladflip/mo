@@ -77,13 +77,13 @@ class nggManageGallery {
 			check_admin_referer('ngg_delpicture');
 			$image = $nggdb->find_image( $this->pid );
 			if ($image) {
+				do_action('ngg_delete_picture', $this->pid, $image);
 				if ($ngg->options['deleteImg']) {
                     $storage = $storage  = C_Gallery_Storage::get_instance();
                     $storage->delete_image($this->pid);
 				}
 				$mapper = C_Image_Mapper::get_instance();
 				$result = $mapper->destroy($this->pid);
-				do_action('ngg_delete_picture', $this->pid);
 
                 if ($result)
                     nggGallery::show_message( __('Picture','nggallery').' \''.$this->pid.'\' '.__('deleted successfully','nggallery') );
@@ -581,8 +581,16 @@ class nggManageGallery {
                         $deleted = FALSE;
 						$mapper = C_Gallery_Mapper::get_instance();
 						foreach ($_POST['doaction'] as $id) {
-							if ($mapper->destroy($id, TRUE))
-								$deleted = TRUE;
+
+							$gallery = $mapper->find($id);
+							if ($gallery->path == '../' || FALSE !== strpos($gallery->path, '/../'))
+							{
+								nggGallery::show_message(sprintf(__('One or more "../" in Gallery paths could be unsafe and NextGen Gallery will not delete gallery %s automatically', 'nggallery'), $gallery->{$gallery->id_field}));
+							}
+							else {
+								if ($mapper->destroy($id, TRUE))
+									$deleted = TRUE;
+							}
 						}
 
 						if ($deleted)
@@ -672,11 +680,11 @@ class nggManageGallery {
 						foreach ( $_POST['doaction'] as $imageID ) {
 							$image = $nggdb->find_image( $imageID );
 							if ($image) {
+								do_action('ngg_delete_picture', $image->pid, $image);
 								if ($ngg->options['deleteImg']) {
                                     $storage = C_Gallery_Storage::get_instance();
                                     $storage->delete_image($image->pid);
 								}
-                                do_action('ngg_delete_picture', $image->pid);
 								$delete_pic = C_Image_Mapper::get_instance()->destroy($image->pid);
 							}
 						}
@@ -807,6 +815,9 @@ class nggManageGallery {
 					}
 					$mapper->save($entity);
 				}
+
+				if ($entity->path == '../' || FALSE !== strpos($entity->path, '/../'))
+					nggGallery::show_message(sprintf(__('One or more "../" in Gallery paths could be unsafe and NextGen Gallery will not delete this gallery automatically', 'nggallery'), $entity->{$entity->id_field}));
 
                 wp_cache_delete($this->gid, 'ngg_gallery');
 

@@ -17,9 +17,9 @@ class M_Ajax extends C_Base_Module
             'AJAX',
             'Provides AJAX functionality',
             '0.8',
-            'http://www.photocrati.com',
+            'https://www.imagely.com',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
 		C_NextGen_Settings::get_instance()->add_option_handler('C_Ajax_Option_Handler', array(
 			'ajax_slug',
@@ -73,7 +73,7 @@ class M_Ajax extends C_Base_Module
         $settings = C_NextGen_Settings::get_instance();
         $router   = C_Router::get_instance();
 
-        wp_register_script('photocrati_ajax', $router->get_static_url('photocrati-ajax#ajax.min.js'), array('jquery'));
+        wp_register_script('photocrati_ajax', $router->get_static_url('photocrati-ajax#ajax.min.js'), array('jquery'), NGG_SCRIPT_VERSION);
 
         $vars = array(
             'url' => $settings->get('ajax_url'),

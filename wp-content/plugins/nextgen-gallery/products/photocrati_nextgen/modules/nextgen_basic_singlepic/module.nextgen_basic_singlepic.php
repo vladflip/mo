@@ -18,9 +18,9 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             'NextGen Basic Singlepic',
             'Provides a singlepic gallery for NextGEN Gallery',
             '0.11',
-            'http://www.photocrati.com',
+            'https://www.imagely.com',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
 
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_NextGen_Basic_SinglePic_Installer');
@@ -92,7 +92,9 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             $router = C_Router::get_instance();
             wp_enqueue_style(
                 'nextgen_basic_singlepic_style',
-                $router->get_static_url(NGG_BASIC_SINGLEPIC . '#nextgen_basic_singlepic.css')
+                $router->get_static_url(NGG_BASIC_SINGLEPIC . '#nextgen_basic_singlepic.css'),
+                FALSE,
+                NGG_SCRIPT_VERSION
             );
         }
 
