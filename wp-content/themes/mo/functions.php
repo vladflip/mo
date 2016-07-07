@@ -99,12 +99,13 @@ function getThumbSrc($id) {
 
 function getTheDate($id) {
 
-	$date = get_the_date('j n', $id);
+	$date = get_the_date('j n Y', $id);
 
 	$date = explode(' ', $date);
 
 	$day = $date[0];
 	$month = $date[1];
+	$year = $date[2];
 
 	$months = array(
 		'Января',
@@ -123,5 +124,5 @@ function getTheDate($id) {
 
 	$dayFormatted = '<span class="post_date--large">' . $day . '</span>';
 
-	return $dayFormatted . ' ' . $months[$month-1];
+	return $dayFormatted . ' ' . $months[$month-1] . ' <span class="post_date--large">' . $year . '</span>';
 }
