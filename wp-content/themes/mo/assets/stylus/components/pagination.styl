@@ -5,17 +5,19 @@
 		
 		display inline-block
 		
-		.pages, .current, .page, .nextpostslink, .previouspostslink
+		.pages, .current, .page, .nextpostslink, 
+		.previouspostslink, .first, .last
 			@extends $material
-			padding 10px 25px	
-			font-size 1.3em
+			padding 8px 20px	
+			font-size 1em
 			text-align center
 			transition color 250ms ease-in-out, background-color 250ms ease-in-out
 		
 		.pages
 			margin-right 25px
 			
-		.current, .page, .nextpostslink, .previouspostslink
+		.current, .page, .nextpostslink, .previouspostslink,
+		.last, .first
 			&:hover
 				color white
 				background-color darken($blue, 10%)
