@@ -8,7 +8,7 @@
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 	$args = [
-		'posts_per_page' => '15',
+		'posts_per_page' => '1',
 		'post_type' => 'post',
 		'paged' => $paged
 	];
@@ -24,6 +24,10 @@
 		<div class="home_posts">
 
 			<?php require_once('inc/posts.php'); ?>
+
+			<div class="pagination">	
+				<?php wp_pagenavi(); ?>
+			</div>
 		
 		</div>
 		
@@ -33,10 +37,4 @@
 
 </div>
 
-<?php
-
-	wp_pagenavi();
-
-	get_footer(); 
-
-?>
+<?php get_footer(); ?>

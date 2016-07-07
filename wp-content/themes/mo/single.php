@@ -4,11 +4,13 @@
 	<div class="container">
 		
 		<div class="post">
-			<?php 
-				the_post();
-				the_content();
-				get_template_part('inc/post_footer');
-			?> 
+			<div class="post_wp-content">
+				<?php 
+					the_post();
+					the_content();
+					get_template_part('inc/post_footer');
+				?> 
+			</div>
 		</div>
 
 		<?php get_sidebar(); ?>
