@@ -15,7 +15,25 @@
 
 	query_posts($args);
 
-	require_once('inc/posts.php'); 
+?>
+
+<div class="home">
+		
+	<div class="container">
+		
+		<div class="home_posts">
+
+			<?php require_once('inc/posts.php'); ?>
+		
+		</div>
+		
+		<?php get_sidebar('sidebar'); ?>
+
+	</div>
+
+</div>
+
+<?php
 
 	wp_pagenavi();
 
